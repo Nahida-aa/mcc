@@ -1,0 +1,35 @@
+{
+  "cSpell.words": [
+    "Bukkit",
+    "datapack",
+    "heroui",
+    "ilike",
+    "litemod",
+    "mcmeta",
+    "minigame",
+    "modpack",
+    "presigner",
+    "resourcepack",
+    "sonner",
+    "sqids",
+    "uploadthing"
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "python.analysis.typeCheckingMode": "basic",
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    ".env": ".env, .env.*",
+    "deploy.md": ".gitignore, ecosystem.config.*, deploy*, swap.sh, cleanup_old.sh, update.sh, blue-green-deploy.sh, verify-deployment.sh, .dockerignore,docker-compose.yml, Dockerfile*, *.tar",
+    "tsconfig.json": "tsconfig.*.json, next-env.d.ts, env.d.ts, biome.json,",
+    "next.config.*": "components.json, postcss.config.*, tailwind.config.*, .vercelignore, mdx-components.tsx, proxy.ts, server.ts",
+    "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*",
+    "package.json": "package-lock.json, nodemon.json, pnpm*, .yarnrc*, yarn*, bun.lock, turbo.json, .eslint*, eslint*,  .oxlint*, oxlint*, .prettier*,  prettier*, .editorconfig, .npmrc, drizzle.config.ts, auth-schema.ts",
+    "README.md": "CHANGELOG.md, LICENSE, CONTRIBUTING.md, CODE_OF_CONDUCT.md, SECURITY.md, readme.*, *.http, *.rest",
+  },
+  "markdown.validate.enabled": false,
+  "typescript.tsserver.maxTsServerMemory": 4096,
+  // mdx -> markdown
+  "files.associations": {
+    "*.mdx": "markdown"
+  }
+}
