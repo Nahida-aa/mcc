@@ -1,3 +1,8 @@
+require('dotenv').config()
+// import 'dotenv/config'
+
+console.log(process.env.SERVER_HOST);
+
 module.exports = {
   apps : [{
     name   : "api",
@@ -7,6 +12,10 @@ module.exports = {
       PATH: `${process.env.HOME}/.bun/bin:${process.env.PATH}`, // Add "~/.bun/bin/bun" to PATH
        "NODE_ENV": "production",
     },
+            env_production: {
+            PATH: `${process.env.HOME}/.bun/bin:${process.env.PATH}`,
+            "NODE_ENV": "production",
+        },
     kill_timeout : 3000,
      wait_ready: true,
      listen_timeout: 10000,
@@ -15,12 +24,12 @@ module.exports = {
     // Deployment Configuration
   deploy : {
     production : {
-      "user" : "deploy",
-      "host" : "8.141.3.89",
+      "user" : process.env.USER,
+      "host" : process.env.SERVER_HOST,
       "ref"  : "origin/main",
-      "repo" : "git@github.com:Nahida-aa/repository.git",
-      "path" : "/var/www/my-repository",
-      "post-deploy" : "npm install"
+      "repo" : "git@github.com:Nahida-aa/mcc.git",
+      "path" : "/home/deploy/mcc",
+      "post-deploy" : "bun install"
     }
   }
 }
