@@ -27,8 +27,8 @@ module.exports = {
       "ref": "origin/main",
       "repo": "git@github.com:Nahida-aa/mcc.git",
       "path": "/home/deploy/mcc",
-      "pre-setup": "echo 'commands or local script path to be run on the host before the setup process starts'",
-      "post-setup": "echo 'commands or a script path to be run on the host after cloning the repo'",
+      "pre-setup": "echo 'commands or local script path to be run on the host before the setup process starts'", // 翻译: 在设置过程开始之前，在主机上运行的命令或本地脚本路径
+      "post-setup": "echo 'commands or a script path to be run on the host after cloning the repo'", // 翻译: 在克隆存储库后(设置后)，在主机上运行的命令或脚本路径
       "pre-deploy": "bun install && pm2:start --env production",
       "post-deploy": "echo 'This is a post-deploy command'",
       "pre-deploy-local": "echo 'This is a local executed command'"

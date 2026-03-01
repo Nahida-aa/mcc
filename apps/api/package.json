@@ -7,7 +7,9 @@
     "pm2:restart": "pm2 restart api",
     "pm2:reload": "pm2 reload api",
     "pm2:stop": "pm2 stop api",
-    "delete:pm2": "pm2 delete api"
+    "delete:pm2": "pm2 delete api",
+    "pm2:deploy:setup": "pm2 deploy production setup",
+    "pm2:deploy": "pm2 deploy production"
   },
   "dependencies": {
     "@orpc/server": "^1.13.5",
