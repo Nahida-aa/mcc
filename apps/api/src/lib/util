@@ -1,0 +1,7 @@
+export const log = {
+  dev:
+    process.env.NODE_ENV === 'development'
+      ? (...args: any[]) =>
+          console.log('%c[DEV]', 'color: #10b981; font-weight: bold', ...args)
+      : () => {},
+}

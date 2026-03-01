@@ -1,0 +1,1 @@
+export const friendStatuses = ['pending', 'accepted', 'rejected'] as const
