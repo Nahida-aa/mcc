@@ -1,8 +1,6 @@
 require('dotenv').config()
 // import 'dotenv/config'
 
-console.log(process.env.SERVER_HOST);
-
 module.exports = {
   apps: [{
     name: "api",
@@ -24,7 +22,7 @@ module.exports = {
   // Deployment Configuration
   deploy: {
     production: {
-      "user": process.env.USER,
+      "user": process.env.SERVER_USER,
       "host": process.env.SERVER_HOST,
       "ref": "origin/main",
       "repo": "git@github.com:Nahida-aa/mcc.git",
