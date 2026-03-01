@@ -22,7 +22,7 @@ module.exports = {
   // Deployment Configuration
   deploy: {
     production: {
-      "key": "/home/aa/.ssh/id_rsa_custom.pub",
+      "key": "/home/aa/.ssh/id_rsa_custom",
       "user": process.env.SERVER_USER,
       "host": process.env.SERVER_HOST,
       "ref": "origin/main",
