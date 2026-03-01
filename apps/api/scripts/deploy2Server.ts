@@ -9,4 +9,4 @@ console.log(chalk.blue(`复制 .env 文件到服务器 ${path}`));
 await $`sshpass -p "${SERVER_PASSWORD}" scp .env ${SERVER_USER}@${SERVER_HOST}:/${path}/.env`
 
 console.log(chalk.blue(`bun install`));
-await $`sshpass -p "${SERVER_PASSWORD}" ssh ${SERVER_USER}@${SERVER_HOST} 'export PATH="/home/deploy/.bun/bin:/home/deploy/.nvm/versions/node/v24.11.1/bin:$PATH" && cd ${path} && bun install && pm2 reload ecosystem.config.js --update-env'`
+await $`sshpass -p "${SERVER_PASSWORD}" ssh ${SERVER_USER}@${SERVER_HOST} 'export PATH="/home/deploy/.bun/bin:/home/deploy/.nvm/versions/node/v24.11.1/bin:$PATH" && cd ${path} && git pull && bun install && pm2 reload ecosystem.config.js --update-env'`
