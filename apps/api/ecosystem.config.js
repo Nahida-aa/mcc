@@ -22,6 +22,7 @@ module.exports = {
   // Deployment Configuration
   deploy: {
     production: {
+      "key": "/home/aa/.ssh/id_rsa_custom.pub",
       "user": process.env.SERVER_USER,
       "host": process.env.SERVER_HOST,
       "ref": "origin/main",
@@ -29,7 +30,7 @@ module.exports = {
       "path": "/home/deploy/mcc",
       "pre-setup": "echo 'commands or local script path to be run on the host before the setup process starts'", // 翻译: 在设置过程开始之前，在主机上运行的命令或本地脚本路径
       "post-setup": "echo 'commands or a script path to be run on the host after cloning the repo'", // 翻译: 在克隆存储库后(设置后)，在主机上运行的命令或脚本路径
-      "pre-deploy": "ls apps/api",
+      "pre-deploy": "pwd && ls apps/api",
       "post-deploy": "echo 'This is a post-deploy command'",
       "pre-deploy-local": "echo 'This is a local executed command'"
     }
