@@ -12,6 +12,7 @@ const server = Bun.serve({
 		const pathname = req.url.startsWith('/')
 			? req.url
 			: new URL(req.url, 'http://localhost').pathname;  // 兜底基地址
+		console.log(pathname)
 		if (pathname === "/socket.io/" || pathname.startsWith("/socket.io/")) {
 			console.debug("Handling WebSocket request");
 			return engine.handleRequest(req, server);
