@@ -25,7 +25,7 @@ export const app = {
     if (matched) {
       return response
     }
-
+    console.log(request)
     return new Response('Not found', { status: 404 })
   }
 }

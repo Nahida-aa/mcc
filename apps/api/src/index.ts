@@ -28,6 +28,6 @@ if (process.send) {
 	console.log('not process.send')
 }
 
-console.log(env);
+// console.log(env);
 console.log('bun:', Bun.env.NODE_ENV, Bun.version)
 console.log(`Listening on ${server.url}`);
