@@ -16,17 +16,18 @@ export const io = new Server<DefaultEventsMap, DefaultEventsMap, DefaultEventsMa
 	// path: "/api/ws",
 	cors: {
 		origin: [
+			"https://联合创作平台.cn",
+			"https://xn--2qqt0eizbxcx84dyq3c.cn",
 			"https://admin.socket.io",
 			"http://localhost:3000",
 			"http://localhost:3001",
 			"http://localhost:3002",
-			"https://xn--2qqt0eizbxcx84dyq3c.cn"
 		],
 		// methods: ["GET", "POST", "OPTIONS"],
-		// credentials: true,
+		credentials: true,
 	},
 	// maxHttpBufferSize: 1e6, // 1MB 限请求体
-	pingTimeout: 15000, // 15s 心跳，防 zombie
+	// pingTimeout: 15000, // 15s 心跳，防 zombie
 	allowEIO3: true, // 兼容旧客户端，减 polling 开销
 });
 export const engine = new Engine();

@@ -31,6 +31,11 @@ systemctl stop redis.service
 ## deploy
 
 ### nginx
+
+```sh
+ls /etc/nginx/sites-enabled/
+ls 
+```
 ```sh
 # 前端 - 主域名
 server {
