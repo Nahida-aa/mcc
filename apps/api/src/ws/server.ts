@@ -20,6 +20,7 @@ export const io = new Server<DefaultEventsMap, DefaultEventsMap, DefaultEventsMa
 			"http://localhost:3000",
 			"http://localhost:3001",
 			"http://localhost:3002",
+			"https://xn--2qqt0eizbxcx84dyq3c.cn"
 		],
 		// methods: ["GET", "POST", "OPTIONS"],
 		// credentials: true,
