@@ -103,7 +103,7 @@ async function getStatuses(userIds: string[]) {
 	const results = await pipeline.exec();
 	if (!results) return {};
 	return userIds.reduce<OnlineStatuses>((acc, id, i) => {
-		const res = results[i][1] as OnlineStatus | null;
+		const res = results?.[i]?.[1] as OnlineStatus | null;
 		if (res) acc[id] = res === "invisible" ? "offline" : res;
 		return acc;
 	}, {});

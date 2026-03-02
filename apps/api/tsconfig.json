@@ -4,6 +4,7 @@
     "target": "ESNext",
     "strict": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "hono/jsx"
+    "jsxImportSource": "hono/jsx",
+    "noUncheckedIndexedAccess": true
   }
 }
