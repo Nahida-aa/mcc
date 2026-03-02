@@ -16,6 +16,7 @@ const server = Bun.serve({
 			console.debug("Handling WebSocket request");
 			return engine.handleRequest(req, server);
 		} else {
+			console.debug("Handling RPC request");
 			return app.fetch(req);
 		}
 	},
