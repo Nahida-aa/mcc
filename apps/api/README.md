@@ -67,3 +67,9 @@ server {
     }
 }
 ```
+
+### cors
+
+```sh
+curl "https://api.xn--2qqt0eizbxcx84dyq3c.cn/socket.io/?EIO=4&transport=polling"
+```

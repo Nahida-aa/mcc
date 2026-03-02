@@ -18,7 +18,9 @@ export const io = new Server<DefaultEventsMap, DefaultEventsMap, DefaultEventsMa
 		origin: [
 			"https://联合创作平台.cn",
 			"https://xn--2qqt0eizbxcx84dyq3c.cn",
+			"https://api.xn--2qqt0eizbxcx84dyq3c.cn",
 			"https://admin.socket.io",
+			"http://localhost:4000",
 			"http://localhost:3000",
 			"http://localhost:3001",
 			"http://localhost:3002",
