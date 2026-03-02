@@ -9,8 +9,10 @@ const server = Bun.serve({
 	port: 4000,
 	idleTimeout: 30, // must be greater than the "pingInterval" option of the engine, which defaults to 25 seconds
 	fetch: (req: Request, server: Bun.Server<WebSocketData>) => {
-		const url = new URL(req.url);
-		if (url.pathname === "/socket.io/") {
+		const pathname = req.url.startsWith('/')
+			? req.url
+			: new URL(req.url, 'http://localhost').pathname;  // 兜底基地址
+		if (pathname === "/socket.io/" || pathname.startsWith("/socket.io/")) {
 			console.debug("Handling WebSocket request");
 			return engine.handleRequest(req, server);
 		} else {
