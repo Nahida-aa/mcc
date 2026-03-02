@@ -25,7 +25,11 @@ export const app = {
     if (matched) {
       return response
     }
-    console.log(request)
+    // console.log(request)
+    const url = new URL(request.url)
+    if (url.pathname === '/api/status') {
+      return new Response('OK', { status: 200 })
+    }
     return new Response('Not found', { status: 404 })
   }
 }
