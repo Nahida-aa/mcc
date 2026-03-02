@@ -7,7 +7,8 @@ import { Redis } from "ioredis";
 import { cookieToKV } from "../auth/utils";
 import { decrypt } from "../auth/jwt";
 import { SocketData } from "./types";
-const redis = new Redis()
+import { env } from "../env";
+const redis = new Redis(env.REDIS_URL)
 
 export const io = new Server<DefaultEventsMap, DefaultEventsMap, DefaultEventsMap, SocketData>({
 	adapter: createAdapter(redis),
