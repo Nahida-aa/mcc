@@ -33,8 +33,9 @@ systemctl stop redis.service
 ### nginx
 
 ```sh
+ls /etc/nginx
 ls /etc/nginx/sites-enabled/
-ls 
+sudo nano /etc/nginx/sites-enabled/default
 ```
 ```sh
 # 前端 - 主域名
