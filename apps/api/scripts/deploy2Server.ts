@@ -1,4 +1,4 @@
-import { $, argv, chalk } from 'zx'
+import { $, argv, chalk, echo } from 'zx'
 
 const SERVER_USER = process.env.SERVER_USER
 const SERVER_HOST = process.env.SERVER_HOST
@@ -9,4 +9,7 @@ const path = '/home/deploy/mcc/current/apps/api'
 // await $`sshpass -p "${SERVER_PASSWORD}" scp .env ${SERVER_USER}@${SERVER_HOST}:/${path}/.env`
 
 console.log(chalk.blue(`bun install`));
-await $`sshpass -p "${SERVER_PASSWORD}" ssh ${SERVER_USER}@${SERVER_HOST} 'export PATH="/home/deploy/.bun/bin:/home/deploy/.nvm/versions/node/v24.11.1/bin:$PATH" && cd ${path} && git pull && scripts/post-deploy.sh'`
+const p1 = $`sshpass -p "${SERVER_PASSWORD}" ssh ${SERVER_USER}@${SERVER_HOST} 'export PATH="/home/deploy/.bun/bin:/home/deploy/.nvm/versions/node/v24.11.1/bin:$PATH" && cd ${path} && git pull && scripts/post-deploy.sh'`
+for await (const chunk of p1.stdout) {
+  echo(chunk)
+}
