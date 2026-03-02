@@ -1,10 +1,19 @@
-import { $, chalk } from "zx";
+import { $, chalk, echo } from "zx";
 
-console.log(chalk.blue(`git pull`));
-await $`git pull`
+console.log(chalk.blue(`git pull`))
+const p1 = $`git pull`.stdio("inherit");
+for await (const chunk of p1.stdout) {
+  echo(chunk)
+}
 
-console.log(chalk.blue(`bun install`));
-await $`bun i --filter apps/api --production`
+console.log(chalk.blue(`bun i --filter apps/api --production`));
+const p2 = $`bun i --filter apps/api --production`.stdio("inherit");
+for await (const chunk of p2.stdout) {
+  echo(chunk)
+}
 
 console.log(chalk.blue(`pm2 reload ecosystem.config.js --update-env`));
-await $`pm2 reload ecosystem.config.js --update-env`
+const p3 = $`pm2 reload ecosystem.config.js --update-env`
+for await (const chunk of p3.stdout) {
+  echo(chunk)
+}
