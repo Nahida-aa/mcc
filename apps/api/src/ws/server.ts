@@ -41,6 +41,7 @@ io.use(async (socket, next) => {
 		const token: string | undefined = socket.handshake.auth.token
 		if (token) {
 			const payload = await decrypt(token)
+			console.log({ token, payload })
 			return payload?.userId as string | undefined
 		}
 

@@ -6,7 +6,7 @@ export const env = createEnv({
     DATABASE_URL: z.url(),
     REDIS_URL: z.url(),
     BETTER_AUTH_SECRET:
-      process.env.NODE_ENV === 'production' ? z.string() : z.string().optional(),
+      z.string(),
     NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
   },
   clientPrefix: "NEXT_PUBLIC_",
