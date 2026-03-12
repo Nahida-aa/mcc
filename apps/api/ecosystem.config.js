@@ -1,6 +1,6 @@
 // require('dotenv').config()
 // import 'dotenv/config'
-
+console.log(Bun.env)
 module.exports = {
   apps: [{
     name: "api",
