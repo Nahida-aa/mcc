@@ -31,5 +31,5 @@ if (process.send) {
 }
 
 // console.log(env);
-console.log('bun:', Bun.env.NODE_ENV, Bun.version)
+console.log('bun:', Bun.env.NODE_ENV, Bun.version, env)
 console.log(`Listening on ${server.url}`);
