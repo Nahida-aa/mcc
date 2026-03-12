@@ -9,7 +9,7 @@
     "pm2:stop": "pm2 stop api",
     "pm2:delete": "pm2 delete api",
     "pm2:deploy:setup": "pm2 deploy production setup",
-    "pm2:deploy": "pm2 deploy production",
+    "pm2:deploy": "export $(cat .env | xargs) && pm2 deploy production",
     "mp2:monit": "pm2 monit"
   },
   "dependencies": {
