@@ -1,4 +1,4 @@
-// require('dotenv').config()
+require('dotenv').config({ path: ['.env.deploy'] })
 // import 'dotenv/config'
 console.log(Bun.env)
 module.exports = {
